@@ -32,33 +32,6 @@ def Punktschätzer_relHäufigkeit():
     print(round(np.mean(data), 3))
 
 # Punktschätzer_relHäufigkeit()
-
-def Mittelwert_Intervall_kleine_Stichprobe():
-    # t-Verteilt
-    import numpy as np
-    from scipy.stats import t
-    data = [12, 12, 13, 13, 15, 16, 17, 22, 23, 25, 26, 27, 28, 28, 29]
-    # ki = Konfidenzintervall
-    ki = 0.95
-    # n = Umfang Stichprobe oder len(data)
-    n = 12
-    # m = Mittelwert oder np.mean(data)
-    m = 6.1
-    print(t.interval(alpha = ki, df = n - 1, loc = m, scale=0.8))
-    
-# Mittelwert_Intervall_kleine_Stichprobe()
-
-# def Mittelwert_Intervall_grosse_Stichprobe():
-#     import numpy as np
-#     from scipy.stats import norm
-#     data = [12, 12, 13, 13, 15, 16, 17, 22, 23, 25, 26, 27, 28, 28, 29]
-#     # ki = Konfidenzintervall
-#     ki = 0.95
-#     # m = Mittelwert oder np.mean(data)
-#     m = 0.6
-#     print(norm.interval(alpha = ki, loc = m, scale=0.8))
-    
-# Mittelwert_Intervall_grosse_Stichprobe()
      
 def Mittelwert_Intervall_grosse_Stichprobe():
     import scipy.stats as st
