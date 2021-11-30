@@ -61,14 +61,15 @@ def Normalverteilung():
     # https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html#scipy.stats.norm
     from scipy.stats import norm
     # m entspricht dem Mittelwert
-    m = 100
+    m = 96
     # v entspricht der Standardabweichung
-    v = 15
+    # Alternativ (n * p * (1-p)) ** 0.5
+    v = 8
     mean, var, skew, kurt = norm.stats(loc=m, scale=v, moments='mvsk')
     std = norm.std(loc=m, scale=v)
     print("Mittelwert:", mean, "Varianz:", var, "Standardabw.:", round(std, 2), "Skewness:", skew, "Kurtosis:", kurt)
     # x entspricht der gewünschten Zahl
-    x = 90
+    x = 104
     # q entspricht definierter Wahrscheinlichkeit (1 = 100%)
     q = 0.95
     print("Wahrscheinlichkeit für k: PDF:", norm.pdf(x, loc=m, scale=v))
