@@ -20,7 +20,7 @@ def BinomialHypotestOneSample():
     print(result)
     # print(result)
     
-# BinomialHypotestOneSample()
+BinomialHypotestOneSample()
 
 def zTestOneSample():
     # Wird angewendet bei Stichprobengrösse kleine ist < 30.
@@ -77,5 +77,27 @@ def KolmogorovSmirnovTest():
     result = stats.kstest(x, 'norm', alternative='less')
     print(result)
     
-KolmogorovSmirnovTest()
+# KolmogorovSmirnovTest()
+
+
+def NormalzuSollwert():
+    from scipy import stats
+    # m0 entspricht dem ursprünglichen Mittelwert
+    m0 = 800
+    # m1 entspricht dem neuen Mittelwert
+    m1 = 840
+    # v entspricht der neuen Standardabweichung
+    v = 400
+    # n entspricht der grösse der Stichprobe
+    n = 1600
+    # tpg entspricht Prüfgrösse t
+    tpg = (m1-m0)/(v/(n**0.5))
+    print("Prüfgrösse t:", tpg)
+    t = stats.t.ppf(q=.01,df= n-1)
+    print("Kritische Grenze:", t)
+    
+    
+# NormalzuSollwert()
+    
+    
     
