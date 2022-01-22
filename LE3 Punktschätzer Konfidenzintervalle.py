@@ -22,7 +22,7 @@ def Punktschätzer_Standardabweichung():
     print("Varianz:", round(np.var(data, ddof=1), 3))
     print("Standardabweichung:", round(np.std(data, ddof=1), 3))
     
-Punktschätzer_Standardabweichung()
+# Punktschätzer_Standardabweichung()
 
 def Punktschätzer_relHäufigkeit():
     print("Punktschätzer relative Häufigkeit")
@@ -36,20 +36,23 @@ def Punktschätzer_relHäufigkeit():
 
 def Mittelwert_Intervall_kleine_Stichprobe():
     import scipy.stats as st
+    # https://statologie.de/konfidenzintervall/
     # m entspricht dem Mittelwert
-    m = 280
+    m = 300
     # v entspricht der Standardabweichung
-    v = 9.7
+    v = 18.5
     # n = Anzahl
-    n = 12
+    n = 25  
     # ki = Konfidenzintervall
-    ki = 0.975
+    ki = 0.95
     zscore = st.norm.ppf(ki)
     print(zscore)
-    intervall = zscore * (((p * (1-p))/n) ** 0.5)
+    # ZScore könnte hier überschrieben werden:
+    # 1.96
+    intervall = zscore * (v / (n ** 0.5))
     print(m - intervall, m + intervall)
     
-# Mittelwert_Intervall_kleine_Stichprobe()
+Mittelwert_Intervall_kleine_Stichprobe()
 
   
 def Mittelwert_Intervall_grosse_Stichprobe():
