@@ -12,7 +12,7 @@ def Punktschätzer_Mittelwert():
     data = [1.9, 3.4, 4.9, 4.4, 5.5]
     # print(round(np.mean(data), 3))
     
-Punktschätzer_Mittelwert()
+# Punktschätzer_Mittelwert()
 
 def Punktschätzer_Standardabweichung():
     print("Punktschätzer Standardabweichung")
@@ -52,7 +52,7 @@ def Mittelwert_Intervall_kleine_Stichprobe():
     intervall = zscore * (v / (n ** 0.5))
     print(m - intervall, m + intervall)
     
-Mittelwert_Intervall_kleine_Stichprobe()
+# Mittelwert_Intervall_kleine_Stichprobe()
 
   
 def Mittelwert_Intervall_grosse_Stichprobe():
@@ -69,3 +69,20 @@ def Mittelwert_Intervall_grosse_Stichprobe():
     print(p - intervall, p + intervall)
     
 # Mittelwert_Intervall_grosse_Stichprobe()
+
+
+def Kennzahlen():
+    import numpy as np
+    data = [1, 2, 3, 4, 5, 6]
+    mean = np.mean(data)
+    var = np.var(data, ddof=0)
+    std = np.std(data, ddof=0)
+    varStichprobe = np.var(data, ddof=1)
+    stdStichprobe = np.std(data, ddof=1)
+    print("Mittelwert:", round(mean, 2))
+    print("Varianz:", round(var, 2))
+    print("Standardabweichung:", round(std, 2))
+    print("Varianz Stichprobe:", round(varStichprobe, 2))
+    print("Standardabweichung Stichprobe:", round(stdStichprobe, 2))
+    
+Kennzahlen()
