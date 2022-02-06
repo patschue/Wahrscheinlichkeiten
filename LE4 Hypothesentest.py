@@ -89,14 +89,16 @@ def NormalzuSollwert():
     # v entspricht der neuen Standardabweichung
     v = 400
     # n entspricht der grösse der Stichprobe
-    n = 1600
+    n = 26
     # tpg entspricht Prüfgrösse t
     tpg = (m1-m0)/(v/(n**0.5))
     print("Prüfgrösse t:", tpg)
     # a entspricht Irrtumswahrscheinlichkeit
     a = 0.01
-    t = stats.t.ppf(q=a,df= n-1)
-    print("Kritische Grenze:", t)
+    tonesided = stats.t.ppf(q=a,df= n-1)
+    print("Kritische Grenze einseitig:", round(tonesided, 4))
+    ttwosided = stats.t.ppf(q=a/2,df= n-1)
+    print("Kritische Grenze einseitig:", round(ttwosided, 4))
     
     
 NormalzuSollwert()
