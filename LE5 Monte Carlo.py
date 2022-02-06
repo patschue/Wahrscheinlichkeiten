@@ -8,9 +8,9 @@ Created on Tue Nov 30 15:17:10 2021
 def MonteCarloNormal():
     # https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.normal.html#numpy.random.Generator.normal
     import numpy
-    mean = 10
-    std = 5
-    size = 10
+    mean = 1000
+    std = 150
+    size = 100000
     my_generator = numpy.random.default_rng()
     result = my_generator.normal(mean, std, size)
     print(result)
@@ -29,3 +29,8 @@ def MonteCarloExponential():
     return result
     
 # MonteCarloExponential()
+
+import numpy
+result2 = [x for x in result if x >= 900]
+resultat = numpy.mean(result2)
+print(resultat)

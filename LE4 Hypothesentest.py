@@ -20,14 +20,14 @@ def BinomialHypotestOneSample():
     print(result)
     # print(result)
     
-BinomialHypotestOneSample()
+# BinomialHypotestOneSample()
 
 def zTestOneSample():
     # Wird angewendet bei Stichprobengrösse kleine ist < 30.
     # https://www.statology.org/z-test-python/
     from statsmodels.stats.weightstats import ztest as ztest
-    Vergleichswert = 100
-    data = [88, 92, 94, 94, 96, 97, 97, 97, 99, 99, 105, 109, 109, 109, 110, 112, 112, 113, 114, 115]
+    Vergleichswert = 27
+    data = [33, 31, 30, 29, 24, 27, 28, 31, 25, 23]
     result = ztest(data, value=Vergleichswert)
     print(result)
     print("Der zweite Wert ist der pvalue.")
@@ -93,11 +93,13 @@ def NormalzuSollwert():
     # tpg entspricht Prüfgrösse t
     tpg = (m1-m0)/(v/(n**0.5))
     print("Prüfgrösse t:", tpg)
-    t = stats.t.ppf(q=.01,df= n-1)
+    # a entspricht Irrtumswahrscheinlichkeit
+    a = 0.01
+    t = stats.t.ppf(q=a,df= n-1)
     print("Kritische Grenze:", t)
     
     
-# NormalzuSollwert()
+NormalzuSollwert()
     
     
     
