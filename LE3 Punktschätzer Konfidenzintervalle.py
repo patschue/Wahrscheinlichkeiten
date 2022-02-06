@@ -55,18 +55,18 @@ def Mittelwert_Intervall_kleine_Stichprobe():
 # Mittelwert_Intervall_kleine_Stichprobe()
 
   
-def Mittelwert_Intervall_grosse_Stichprobe():
-    import scipy.stats as st
-    # p = Wahrscheinlichkeit
-    p = 86/123
-    # n = Anzahl
-    n = 12
-    # ki = Konfidenzintervall
-    ki = 0.975
-    zscore = st.norm.ppf(ki)
-    print(zscore)
-    intervall = zscore * (((p * (1-p))/n) ** 0.5)
-    print(p - intervall, p + intervall)
+# def Mittelwert_Intervall_grosse_Stichprobe():
+#     import scipy.stats as st
+#     # p = Wahrscheinlichkeit
+#     p = 86/123
+#     # n = Anzahl
+#     n = 12
+#     # ki = Konfidenzintervall
+#     ki = 0.975
+#     zscore = st.norm.ppf(ki)
+#     print(zscore)
+#     intervall = zscore * (((p * (1-p))/n) ** 0.5)
+#     print(p - intervall, p + intervall)
     
 # Mittelwert_Intervall_grosse_Stichprobe()
 
