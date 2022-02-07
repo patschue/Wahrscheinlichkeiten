@@ -8,17 +8,17 @@ Voraussetzung Scipy Version grösser 1.70
 
 def BinomialHypotestOneSample():
     # https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binomtest.html#scipy.stats.binomtest
-    from scipy.stats import binomtest
+    # from scipy.stats import binomtest
+    from scipy import stats
     # k = The number of successes
-    k = 4
+    k = 3
     # x = The number of trials
-    x = 15
+    x = 7
     # y = The hypothesized probability of success
-    y = 0.1
+    y = 1/6
     # ‘two-sided’ (default), ‘greater’, ‘less’
-    result = binomtest(k, n=x, p=y, alternative='two-sided')
+    result = stats.binomtest(k, n=x, p=y, alternative='two-sided')
     print(result)
-    # print(result)
     
 # BinomialHypotestOneSample()
 
@@ -83,25 +83,25 @@ def KolmogorovSmirnovTest():
 def NormalzuSollwert():
     from scipy import stats
     # m0 entspricht dem ursprünglichen Mittelwert
-    m0 = 800
+    m0 = 1
     # m1 entspricht dem neuen Mittelwert
-    m1 = 840
+    m1 = 0.995
     # v entspricht der neuen Standardabweichung
-    v = 400
+    v = 0.02
     # n entspricht der grösse der Stichprobe
-    n = 1600
+    n = 20
     # tpg entspricht Prüfgrösse t
     tpg = (m1-m0)/(v/(n**0.5))
     print("Prüfgrösse t:", tpg)
     # a entspricht Irrtumswahrscheinlichkeit
-    a = 0.01
+    a = 0.10
     tonesided = stats.t.ppf(q=a,df= n-1)
     print("Kritische Grenze einseitig:", round(tonesided, 4))
     ttwosided = stats.t.ppf(q=a/2,df= n-1)
     print("Kritische Grenze beidseitig:", round(ttwosided, 4))
     
     
-# NormalzuSollwert()
+NormalzuSollwert()
     
     
     

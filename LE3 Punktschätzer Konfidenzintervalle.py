@@ -38,13 +38,13 @@ def Mittelwert_Intervall_kleine_Stichprobe():
     import scipy.stats as st
     # https://statologie.de/konfidenzintervall/
     # m entspricht dem Mittelwert
-    m = 300
+    m = 10.08
     # v entspricht der Standardabweichung
-    v = 18.5
+    v = 0.03
     # n = Anzahl
     n = 25  
     # ki = Konfidenzintervall
-    ki = 0.95
+    ki = 0.9
     zscore = st.norm.ppf(ki)
     print(zscore)
     # ZScore könnte hier überschrieben werden:
@@ -52,7 +52,7 @@ def Mittelwert_Intervall_kleine_Stichprobe():
     intervall = zscore * (v / (n ** 0.5))
     print(m - intervall, m + intervall)
     
-# Mittelwert_Intervall_kleine_Stichprobe()
+Mittelwert_Intervall_kleine_Stichprobe()
 
   
 # def Mittelwert_Intervall_grosse_Stichprobe():
@@ -85,4 +85,4 @@ def Kennzahlen():
     print("Varianz Stichprobe:", round(varStichprobe, 2))
     print("Standardabweichung Stichprobe:", round(stdStichprobe, 2))
     
-Kennzahlen()
+# Kennzahlen()

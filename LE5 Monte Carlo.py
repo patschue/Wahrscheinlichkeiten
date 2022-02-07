@@ -16,7 +16,7 @@ def MonteCarloNormal():
     print(result)
     return result
     
-result = MonteCarloNormal()
+# result = MonteCarloNormal()
 
 def MonteCarloExponential():
     # https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.exponential.html#numpy.random.Generator.exponential
@@ -30,7 +30,19 @@ def MonteCarloExponential():
     
 # MonteCarloExponential()
 
-import numpy
-result2 = [x for x in result if x >= 900]
-resultat = numpy.mean(result2)
-print(resultat)
+import pandas as pd
+import numpy as np
+
+my_generator = np.random.default_rng()
+Kosten = my_generator.normal(650000, 50000, 1000000)
+Anzahl = np.random.binomial(30, 0.6, 1000000)
+Verkaufspreis = my_generator.normal(600000, 30000, 1000000)
+Prodpreis = my_generator.normal(450000, 40000, 1000000)
+Result = pd.DataFrame(pd.np.column_stack([Kosten, Anzahl, Verkaufspreis, Prodpreis]))
+Result["Kosten"] = Result[1] * Result[3]
+Result["Erlös"] = Result[3] * Result[2]
+Result["Gewinn"] = Result["Erlös"] - Result["Kosten"]
+Result["Reingewinn"] = Result["Gewinn"] - Result[0]
+
+dfverlust = Result[Result['Reingewinn'] < 0]
+print(len(dfverlust))
