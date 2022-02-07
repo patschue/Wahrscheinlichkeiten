@@ -10,7 +10,7 @@ def Punktschätzer_Mittelwert():
     # https://spaces.technik.fhnw.ch/multimediathek/file/parameterschatzung-skript
     import numpy as np
     data = [1.9, 3.4, 4.9, 4.4, 5.5]
-    # print(round(np.mean(data), 3))
+    print(round(np.mean(data), 3))
     
 # Punktschätzer_Mittelwert()
 
